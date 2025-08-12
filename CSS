@@ -1,0 +1,295 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+h1, h2, h3, h4 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.5em;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+h4 {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+    color: #3498db;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* Header Section */
+header {
+    background-color: #3498db;
+    color: #fff;
+    padding: 30px 40px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.header-text {
+    flex-grow: 1;
+}
+
+.header-text p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* Contact Info Section */
+.contact-info {
+    padding: 30px 40px;
+    background-color: #ecf0f1;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info li {
+    margin-bottom: 12px;
+    font-size: 1.1em;
+}
+
+.contact-info strong {
+    color: #2c3e50;
+    min-width: 80px; /* Align labels */
+    display: inline-block;
+}
+
+/* Experience Section */
+.experience {
+    padding: 30px 40px;
+}
+
+.job {
+    margin-bottom: 25px;
+}
+
+.job h4 {
+    margin-bottom: 5px;
+    color: #3498db;
+}
+
+.job p {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.job ul li {
+    margin-bottom: 5px;
+}
+
+/* Education Section */
+.education {
+    padding: 30px 40px;
+    background-color: #ecf0f1;
+}
+
+.degree {
+    margin-bottom: 20px;
+}
+
+.degree h4 {
+    margin-bottom: 5px;
+    color: #3498db;
+}
+
+.degree p {
+    margin-bottom: 5px;
+}
+
+/* Skills Section */
+.skills {
+    padding: 30px 40px;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.skill-category {
+    flex: 1;
+    min-width: 250px;
+}
+
+.skill-category h4 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-category li {
+    background-color: #e0e0e0;
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    display: inline-block; /* For better spacing if needed */
+    font-size: 0.95em;
+}
+
+/* Projects Section */
+.projects {
+    padding: 30px 40px;
+    background-color: #ecf0f1;
+}
+
+.project {
+    margin-bottom: 20px;
+}
+
+.project h4 {
+    margin-bottom: 5px;
+    color: #3498db;
+}
+
+/* Languages and Certifications */
+.languages, .certifications {
+    padding: 30px 40px;
+}
+
+.languages ul, .certifications ul {
+    list-style: none;
+    padding: 0;
+}
+
+.languages li, .certifications li {
+    margin-bottom: 10px;
+}
+
+.languages li strong, .certifications li strong {
+    color: #2c3e50;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    .profile-picture img {
+        width: 120px;
+        height: 120px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    .skills-list {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .skill-category {
+        min-width: unset;
+    }
+    body {
+        padding: 10px;
+    }
+    .container {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 15px;
+    }
+    .profile-picture img {
+        width: 100px;
+        height: 100px;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+    h2 {
+        font-size: 1.3em;
+    }
+    h3 {
+        font-size: 1.3em;
+    }
+    .contact-info, .experience, .education, .skills, .projects, .languages, .certifications {
+        padding: 20px;
+    }
+}
