@@ -1,0 +1,23 @@
+// JavaScript for resume template
+
+// Back to Top Button functionality
+const backToTopButton = document.querySelector('.back-to-top');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) { // Show button after scrolling 200px
+        backToTopButton.classList.add('show');
+    } else {
+        backToTopButton.classList.remove('show');
+    }
+});
+
+backToTopButton.addEventListener('click', (e) => {
+    e.preventDefault(); // Prevent default anchor behavior
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Smooth scrolling
+    });
+});
+
+// Optional: Add more interactivity here if needed in the future
+// For example, you could add functionality to print the resume or toggle sections.
