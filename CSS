@@ -22,24 +22,24 @@ body {
 }
 
 h1, h2, h3, h4 {
-    color: #2c3e50;
     margin-bottom: 15px;
 }
 
 h1 {
     font-size: 2.5em;
     margin-bottom: 5px;
+    color: #ffffff; /* Darker blue for better contrast */
 }
 
 h2 {
     font-size: 1.8em;
-    color: #555;
+    color: #ffffff; /* Slightly lighter dark blue for contrast */
     margin-bottom: 10px;
 }
 
 h3 {
     font-size: 1.5em;
-    border-bottom: 2px solid #3498db;
+    border-bottom: 2px solid #0019fc;
     padding-bottom: 5px;
     margin-top: 25px;
     margin-bottom: 15px;
@@ -48,7 +48,7 @@ h3 {
 h4 {
     font-size: 1.2em;
     margin-bottom: 8px;
-    color: #3498db;
+    color: #0019fc;
 }
 
 p {
@@ -65,19 +65,19 @@ li {
 }
 
 a {
-    color: #3498db;
+    color: #0019fc;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 a:hover {
-    color: #2980b9;
+    color: #0019fc;
     text-decoration: underline;
 }
 
 /* Header Section */
 header {
-    background-color: #3498db;
+    background-color: #0019fc;
     color: #fff;
     padding: 30px 40px;
     display: flex;
@@ -87,15 +87,16 @@ header {
     border-top-right-radius: 10px;
 }
 
-.profile-picture img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+@keyframes fadeInHeader {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
+.header-content-wrapper {
+    opacity: 0; /* Start hidden */
+    animation: fadeInHeader 1s ease-out forwards;
+    animation-delay: 0.5s; /* Slight delay before animation starts */
+}
 .header-text {
     flex-grow: 1;
 }
@@ -103,6 +104,7 @@ header {
 .header-text p {
     font-size: 1.1em;
     opacity: 0.9;
+    text-align: left; /* Ensure left alignment */
 }
 
 /* Contact Info Section */
@@ -117,13 +119,13 @@ header {
 }
 
 .contact-info li {
-    margin-bottom: 12px;
+    margin-bottom: 15px; /* Increased spacing */
     font-size: 1.1em;
 }
 
 .contact-info strong {
-    color: #2c3e50;
-    min-width: 80px; /* Align labels */
+    color: #0019fc;
+    min-width: 55px; /* Align labels, reduced width */
     display: inline-block;
 }
 
@@ -138,7 +140,7 @@ header {
 
 .job h4 {
     margin-bottom: 5px;
-    color: #3498db;
+    color: #0019fc;
 }
 
 .job p {
@@ -163,7 +165,7 @@ header {
 
 .degree h4 {
     margin-bottom: 5px;
-    color: #3498db;
+    color: #0019fc;
 }
 
 .degree p {
@@ -188,7 +190,7 @@ header {
 
 .skill-category h4 {
     margin-bottom: 10px;
-    color: #2c3e50;
+    color: #0019fc;
     border-bottom: 1px solid #eee;
     padding-bottom: 5px;
 }
@@ -205,6 +207,12 @@ header {
     margin-bottom: 8px;
     display: inline-block; /* For better spacing if needed */
     font-size: 0.95em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-category li:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Projects Section */
@@ -219,7 +227,7 @@ header {
 
 .project h4 {
     margin-bottom: 5px;
-    color: #3498db;
+    color: #0019fc;
 }
 
 /* Languages and Certifications */
@@ -232,12 +240,15 @@ header {
     padding: 0;
 }
 
-.languages li, .certifications li {
+.languages li{
     margin-bottom: 10px;
 }
+.certifications li{
+    font-size: 18px;
 
+}
 .languages li strong, .certifications li strong {
-    color: #2c3e50;
+    color: #0019fc;
 }
 
 /* Responsive adjustments */
@@ -276,10 +287,6 @@ header {
     header {
         padding: 15px;
     }
-    .profile-picture img {
-        width: 100px;
-        height: 100px;
-    }
     h1 {
         font-size: 1.8em;
     }
@@ -292,4 +299,35 @@ header {
     .contact-info, .experience, .education, .skills, .projects, .languages, .certifications {
         padding: 20px;
     }
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #0019fc; /* Corrected color */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000; /* Ensure it's on top */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.back-to-top.show {
+    display: block; /* Show when class is added */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background-color: #0019fc;
+    transform: translateY(-2px); /* Slight lift on hover */
 }
